@@ -1,0 +1,6 @@
+{
+ "ok": true,
+ "mode": "local",
+ "ingested": 12,
+ "message": "HydraDB not configured — local dataset verified (transparent fallback)."
+}

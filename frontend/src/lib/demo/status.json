@@ -1,0 +1,10 @@
+{
+ "hydra_configured": false,
+ "hydra_connected": false,
+ "hydra_database": "throughline_demo",
+ "hydra_collection": "northstar_knowledge",
+ "retrieval_mode": "local",
+ "indexed_sources": 12,
+ "sources_completed": 12,
+ "message": "HYDRA_DB_API_KEY not set — running in transparent local mode."
+}

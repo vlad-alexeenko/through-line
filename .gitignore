@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+node_modules/
+.next/
+data/throughline.db
+.env
+*.pyc
+*.tsbuildinfo
+.DS_Store
+.vercel/

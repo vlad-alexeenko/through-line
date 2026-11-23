@@ -1,0 +1,133 @@
+{
+ "analysis_id": "an_be8346c28c",
+ "retrieval_mode": "local",
+ "old_window_days": null,
+ "new_window_days": null,
+ "effective_date": null,
+ "summary": "No supporting evidence found in the Company Brain for this request. No impacts or follow-up actions were generated.",
+ "impacts": [],
+ "exceptions": [],
+ "actions": [],
+ "sources": [
+  {
+   "source_id": "standard_agreement",
+   "title": "Standard Customer Agreement",
+   "excerpt": "# Standard Customer Agreement (Template, Oct 2026)  ## Section 4 — Refunds  > \"Refunds are governed by the Northstar Cloud general refund policy in effect at the time of purchase.\"  Because this clause references the general policy **dynamically**, all standard customers purchasing on or after October 15, 2026 automatically move to the **14-day** window. No per-customer amendment is required, but ",
+   "score": 0.5214
+  },
+  {
+   "source_id": "sales_onboarding",
+   "title": "Sales Onboarding Guide",
+   "excerpt": "# Sales Onboarding Guide — Refund Talking Points (STALE)  ## What to tell prospects (updated Aug 2026 — needs refresh for Oct 15 change)  - \"Northstar Cloud offers a **30-day** money-back guarantee.\" → UPDATE to **14 days** for deals closing on/after Oct 15, 2026. - \"Annual plans are refunded pro rata.\" (Still true.) - \"Enterprise terms can be negotiated.\" (Still true — Legal must review any devia",
+   "score": 0.5193
+  },
+  {
+   "source_id": "refund_policy_v1",
+   "title": "Refund Policy v1 — 30 Days",
+   "excerpt": "# Refund Policy v1 — 30 Days (SUPERSEDED)  **Status:** SUPERSEDED by Refund Policy v2 effective October 15, 2026. Do not treat this version as current policy.  ## Policy statement  Northstar Cloud offers a **30-day refund eligibility window** from the date of purchase for all self-serve plans. Annual plans are refunded pro rata for unused full months. Enterprise agreements with explicit refund ter",
+   "score": 0.5159
+  },
+  {
+   "source_id": "refund_policy_v2",
+   "title": "Refund Policy v2 — 14 Days",
+   "excerpt": "# Refund Policy v2 — 14 Days (CURRENT)  **Status:** CURRENT general policy, effective **October 15, 2026**. Supersedes Refund Policy v1.  ## Policy statement  Northstar Cloud offers a **14-day refund eligibility window** from the date of purchase for all self-serve plans. Annual plans are refunded pro rata for unused full months.  ## What changed vs v1  - Eligibility window: **30 days → 14 days**.",
+   "score": 0.5151
+  },
+  {
+   "source_id": "support_faq",
+   "title": "Customer Support Refund FAQ",
+   "excerpt": "# Customer Support Refund FAQ (last updated Sep 20, 2026 — STALE)  > NOTE: This FAQ still describes the old 30-day window. It must be updated to the 14-day policy effective Oct 15, 2026.  **Q: How long do I have to request a refund?** A: You can request a refund within **30 days** of purchase. *(STALE — update to 14 days.)*  **Q: Are annual plans refundable?** A: Yes, pro rata for unused full mont",
+   "score": 0.5141
+  },
+  {
+   "source_id": "prior_approval_record",
+   "title": "Previous Change Approval Record — SLA Change Sep 2026",
+   "excerpt": "# Previous Change Approval Record — Support SLA Change (Sep 2026)  **Change:** Support response SLA tightened from 24h to 12h for enterprise tickets. **Decision:** Approved by Jordan Lee on Sep 18, 2026, after Support + Finance review. **Follow-ups completed:** FAQ updated (Dana Kim), on-call rotation adjusted, memory logged for future rollouts.  **Lesson learned (applies to refund change):** stal",
+   "score": 0.3904
+  },
+  {
+   "source_id": "finance_sop",
+   "title": "Finance Refund Processing SOP",
+   "excerpt": "# Finance Refund Processing SOP v3.2 (NEEDS REVIEW for 14-day window)  ## Workflow WF-FIN-01: Refund approval and settlement  1. Verify purchase date is within the eligibility window. Current SOP text says **30 days** — update to **14 days** effective Oct 15, 2026. 2. Verify requester identity and original payment method. 3. If refund > $5,000, route to Finance approver (Priya Nair). 4. If custome",
+   "score": 0.389
+  },
+  {
+   "source_id": "acme_agreement",
+   "title": "ACME Corp Enterprise Agreement",
+   "excerpt": "# ACME Corp Enterprise Agreement (ACTIVE through Dec 31, 2026)  ## Section 7.3 — Refunds (explicit contractual term)  > \"Customer (ACME Corp) shall be eligible for a full refund of license fees if requested within **thirty (30) days** of the applicable invoice date. This Section 7.3 remains in effect through **December 31, 2026**, and supersedes any conflicting general refund policy during that pe",
+   "score": 0.3873
+  }
+ ],
+ "graph": {
+  "query_paths": [],
+  "relations": [
+   {
+    "context": "Refund Policy v2 states it supersedes v1 effective Oct 15, 2026.",
+    "predicate": "SUPERSEDES",
+    "source": "policy_v2",
+    "target": "policy_v1"
+   },
+   {
+    "context": "FAQ still quotes the 30-day window; update due Oct 14.",
+    "predicate": "IMPACTS",
+    "source": "policy_v2",
+    "target": "doc_faq"
+   },
+   {
+    "context": "Templates R-1 and R-3 quote 30 days and need refresh.",
+    "predicate": "IMPACTS",
+    "source": "policy_v2",
+    "target": "doc_templates"
+   },
+   {
+    "context": "Sales talk track promises a 30-day guarantee.",
+    "predicate": "IMPACTS",
+    "source": "policy_v2",
+    "target": "doc_sales"
+   },
+   {
+    "context": "SOP step 1 verifies a 30-day window; review for 14 days.",
+    "predicate": "IMPACTS",
+    "source": "policy_v2",
+    "target": "doc_sop"
+   },
+   {
+    "context": "Section 7.3 names ACME Corp with explicit 30-day terms.",
+    "predicate": "APPLIES_TO",
+    "source": "doc_acme",
+    "target": "acme"
+   },
+   {
+    "context": "Section 7.3 supersedes conflicting general policy through Dec 31, 2026.",
+    "predicate": "OVERRIDES",
+    "source": "doc_acme",
+    "target": "policy_v2"
+   },
+   {
+    "context": "Section 4 references the general policy dynamically.",
+    "predicate": "FOLLOWS",
+    "source": "doc_std",
+    "target": "policy_v2"
+   },
+   {
+    "context": "Ownership directory: FAQ and templates owned by Support.",
+    "predicate": "OWNED_BY",
+    "source": "doc_faq",
+    "target": "dept_support"
+   }
+  ],
+  "provenance": "local-manifest"
+ },
+ "baseline_chunks": 8,
+ "graph_chunks": 8,
+ "selected_tools": [],
+ "execution_log": [
+  "Analysis an_be8346c28c started.",
+  "Planner (openai-tool-calling · gpt-6-luna) selected tools: search_company_knowledge, compare_policy_versions, detect_conflicts, retrieve_related_entities, prepare_action_tasks",
+  "Local retrieval: 8 chunks (transparent fallback).",
+  "Evidence gate (top local score 0.521 < 0.8) — skipping detect_conflicts/prepare_action_tasks; refusing to fabricate impacts."
+ ],
+ "warnings": [
+  "Insufficient evidence in the Company Brain for this request (top retrieval score 0.521). No impacts or actions were generated — nothing is presented as company policy."
+ ]
+}

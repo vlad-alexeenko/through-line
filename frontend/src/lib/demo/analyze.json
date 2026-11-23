@@ -1,0 +1,347 @@
+{
+ "analysis_id": "an_8848a5e031",
+ "retrieval_mode": "local",
+ "old_window_days": 30,
+ "new_window_days": 14,
+ "effective_date": "2026-10-15",
+ "summary": "Refund window 30d → 14d effective 2026-10-15. 4 departments affected. ACME Corp contractual exception detected (30d through Dec 31, 2026).",
+ "impacts": [
+  {
+   "department": "Customer Support",
+   "affected_documents": [
+    "Customer Support Refund FAQ",
+    "Customer Support Response Templates"
+   ],
+   "description": "FAQ and reply templates still quote a 30-day window. They will misinform customers for purchases on/after Oct 15, 2026 unless updated.",
+   "severity": "High",
+   "owner": "Dana Kim",
+   "evidence": [
+    {
+     "source_id": "support_faq",
+     "title": "Customer Support Refund FAQ",
+     "excerpt": "# Customer Support Refund FAQ (last updated Sep 20, 2026 — STALE)  > NOTE: This FAQ still describes the old 30-day window. It must be updated to the 14-day policy effective Oct 15, 2026.  **Q: How long do I have to request a refund?** A: You can request a refund within **30 days** of purchase. *(STALE — update to 14 days.)*  **Q: Are annual plans refundable?** A: Yes, pro rata for unused full mont",
+     "score": 1.6039
+    },
+    {
+     "source_id": "support_templates",
+     "title": "Customer Support Response Templates",
+     "excerpt": "# Customer Support Response Templates (STALE — reference 30 days)  ## Template R-1: Standard refund reply  > Hi {{name}}, thanks for reaching out. Our refund policy allows refunds within **30 days** of purchase. *[UPDATE to 14 days for requests on/after Oct 15, 2026.]*  ## Template R-2: Enterprise customer reply  > Hi {{name}}, I've pulled up your agreement. Customers with signed enterprise terms ",
+     "score": 1.1745
+    }
+   ],
+   "recommended_action": "Rewrite FAQ + templates R-1/R-3 to 14 days before Oct 14; keep enterprise carve-out note.",
+   "verified": true
+  },
+  {
+   "department": "Sales",
+   "affected_documents": [
+    "Sales Onboarding Guide",
+    "Standard Customer Agreement"
+   ],
+   "description": "Onboarding talk track promises a 30-day guarantee. Standard Agreement follows the general policy dynamically, so reps will over-promise without a refresh.",
+   "severity": "High",
+   "owner": "Marcus Webb",
+   "evidence": [
+    {
+     "source_id": "standard_agreement",
+     "title": "Standard Customer Agreement",
+     "excerpt": "# Standard Customer Agreement (Template, Oct 2026)  ## Section 4 — Refunds  > \"Refunds are governed by the Northstar Cloud general refund policy in effect at the time of purchase.\"  Because this clause references the general policy **dynamically**, all standard customers purchasing on or after October 15, 2026 automatically move to the **14-day** window. No per-customer amendment is required, but ",
+     "score": 1.3012
+    }
+   ],
+   "recommended_action": "Update talk track to 14 days; remind reps enterprise deviations need Legal sign-off.",
+   "verified": true
+  },
+  {
+   "department": "Finance",
+   "affected_documents": [
+    "Finance Refund Processing SOP"
+   ],
+   "description": "SOP step 1 verifies a 30-day window (WF-FIN-01). Eligibility checks and ledger cutover must move to 14 days, except ACME contract cases.",
+   "severity": "Medium",
+   "owner": "Priya Nair",
+   "evidence": [
+    {
+     "source_id": "finance_sop",
+     "title": "Finance Refund Processing SOP",
+     "excerpt": "# Finance Refund Processing SOP v3.2 (NEEDS REVIEW for 14-day window)  ## Workflow WF-FIN-01: Refund approval and settlement  1. Verify purchase date is within the eligibility window. Current SOP text says **30 days** — update to **14 days** effective Oct 15, 2026. 2. Verify requester identity and original payment method. 3. If refund > $5,000, route to Finance approver (Priya Nair). 4. If custome",
+     "score": 1.2943
+    }
+   ],
+   "recommended_action": "Review WF-FIN-01: add 14-day check + ACME 30-day branch; update by Oct 16.",
+   "verified": true
+  },
+  {
+   "department": "Legal",
+   "affected_documents": [
+    "Refund Policy v1",
+    "Refund Policy v2",
+    "ACME Corp Enterprise Agreement"
+   ],
+   "description": "Policy v2 (14d, eff. Oct 15) supersedes v1 (30d). ACME's signed 30-day term through Dec 31, 2026 overrides the general policy for that account.",
+   "severity": "High",
+   "owner": "Amara Osei",
+   "evidence": [
+    {
+     "source_id": "refund_policy_v2",
+     "title": "Refund Policy v2 — 14 Days",
+     "excerpt": "# Refund Policy v2 — 14 Days (CURRENT)  **Status:** CURRENT general policy, effective **October 15, 2026**. Supersedes Refund Policy v1.  ## Policy statement  Northstar Cloud offers a **14-day refund eligibility window** from the date of purchase for all self-serve plans. Annual plans are refunded pro rata for unused full months.  ## What changed vs v1  - Eligibility window: **30 days → 14 days**.",
+     "score": 1.8991
+    },
+    {
+     "source_id": "refund_policy_v1",
+     "title": "Refund Policy v1 — 30 Days",
+     "excerpt": "# Refund Policy v1 — 30 Days (SUPERSEDED)  **Status:** SUPERSEDED by Refund Policy v2 effective October 15, 2026. Do not treat this version as current policy.  ## Policy statement  Northstar Cloud offers a **30-day refund eligibility window** from the date of purchase for all self-serve plans. Annual plans are refunded pro rata for unused full months. Enterprise agreements with explicit refund ter",
+     "score": 1.7556
+    },
+    {
+     "source_id": "acme_agreement",
+     "title": "ACME Corp Enterprise Agreement",
+     "excerpt": "# ACME Corp Enterprise Agreement (ACTIVE through Dec 31, 2026)  ## Section 7.3 — Refunds (explicit contractual term)  > \"Customer (ACME Corp) shall be eligible for a full refund of license fees if requested within **thirty (30) days** of the applicable invoice date. This Section 7.3 remains in effect through **December 31, 2026**, and supersedes any conflicting general refund policy during that pe",
+     "score": 1.611
+    }
+   ],
+   "recommended_action": "Confirm v1 marked superseded; circulate ACME carve-out to Support/Finance/Sales.",
+   "verified": true
+  }
+ ],
+ "exceptions": [
+  {
+   "title": "ACME Corp — contractual exception detected",
+   "customer": "ACME Corp",
+   "clause": "Section 7.3",
+   "applies_through": "2026-12-31",
+   "explanation": "ACME Corp has an active contractual exception. The new general policy should not automatically override the existing agreement: Section 7.3 guarantees 30-day refunds through December 31, 2026. This is demo-data analysis, not legal advice.",
+   "evidence": [
+    {
+     "source_id": "acme_agreement",
+     "title": "ACME Corp Enterprise Agreement",
+     "excerpt": "# ACME Corp Enterprise Agreement (ACTIVE through Dec 31, 2026)  ## Section 7.3 — Refunds (explicit contractual term)  > \"Customer (ACME Corp) shall be eligible for a full refund of license fees if requested within **thirty (30) days** of the applicable invoice date. This Section 7.3 remains in effect through **December 31, 2026**, and supersedes any conflicting general refund policy during that pe",
+     "score": 1.611
+    }
+   ]
+  }
+ ],
+ "actions": [
+  {
+   "id": "act_7f7bc0fb",
+   "title": "Update Support FAQ + response templates",
+   "description": "Rewrite FAQ answers and templates R-1/R-3 from 30 to 14 days; add enterprise carve-out note. Due Oct 14.",
+   "department": "Customer Support",
+   "owner": "Dana Kim",
+   "priority": "High",
+   "evidence": [
+    {
+     "source_id": "support_faq",
+     "title": "Customer Support Refund FAQ",
+     "excerpt": "# Customer Support Refund FAQ (last updated Sep 20, 2026 — STALE)  > NOTE: This FAQ still describes the old 30-day window. It must be updated to the 14-day policy effective Oct 15, 2026.  **Q: How long do I have to request a refund?** A: You can request a refund within **30 days** of purchase. *(STALE — update to 14 days.)*  **Q: Are annual plans refundable?** A: Yes, pro rata for unused full mont",
+     "score": 1.6039
+    },
+    {
+     "source_id": "support_templates",
+     "title": "Customer Support Response Templates",
+     "excerpt": "# Customer Support Response Templates (STALE — reference 30 days)  ## Template R-1: Standard refund reply  > Hi {{name}}, thanks for reaching out. Our refund policy allows refunds within **30 days** of purchase. *[UPDATE to 14 days for requests on/after Oct 15, 2026.]*  ## Template R-2: Enterprise customer reply  > Hi {{name}}, I've pulled up your agreement. Customers with signed enterprise terms ",
+     "score": 1.1745
+    }
+   ],
+   "status": "draft",
+   "idempotency_key": "7f7bc0fb6652514a",
+   "approval_note": ""
+  },
+  {
+   "id": "act_b4b24a39",
+   "title": "Update sales talk track + agreement briefing",
+   "description": "Refresh onboarding guide talk track to 14 days; brief reps that Standard Agreement follows general policy dynamically.",
+   "department": "Sales",
+   "owner": "Marcus Webb",
+   "priority": "High",
+   "evidence": [
+    {
+     "source_id": "standard_agreement",
+     "title": "Standard Customer Agreement",
+     "excerpt": "# Standard Customer Agreement (Template, Oct 2026)  ## Section 4 — Refunds  > \"Refunds are governed by the Northstar Cloud general refund policy in effect at the time of purchase.\"  Because this clause references the general policy **dynamically**, all standard customers purchasing on or after October 15, 2026 automatically move to the **14-day** window. No per-customer amendment is required, but ",
+     "score": 1.3012
+    }
+   ],
+   "status": "draft",
+   "idempotency_key": "b4b24a3968e4f2d3",
+   "approval_note": ""
+  },
+  {
+   "id": "act_405d2e7b",
+   "title": "Review Finance SOP WF-FIN-01",
+   "description": "Change eligibility check to 14 days; add ACME 30-day branch; confirm ledger cutover. Due Oct 16.",
+   "department": "Finance",
+   "owner": "Priya Nair",
+   "priority": "Medium",
+   "evidence": [
+    {
+     "source_id": "finance_sop",
+     "title": "Finance Refund Processing SOP",
+     "excerpt": "# Finance Refund Processing SOP v3.2 (NEEDS REVIEW for 14-day window)  ## Workflow WF-FIN-01: Refund approval and settlement  1. Verify purchase date is within the eligibility window. Current SOP text says **30 days** — update to **14 days** effective Oct 15, 2026. 2. Verify requester identity and original payment method. 3. If refund > $5,000, route to Finance approver (Priya Nair). 4. If custome",
+     "score": 1.2943
+    }
+   ],
+   "status": "draft",
+   "idempotency_key": "405d2e7bbafe58a9",
+   "approval_note": ""
+  },
+  {
+   "id": "act_15eeaf91",
+   "title": "Legal: confirm supersession + circulate carve-out",
+   "description": "Mark v1 superseded; circulate ACME Section 7.3 exception to Support/Finance/Sales.",
+   "department": "Legal",
+   "owner": "Amara Osei",
+   "priority": "Medium",
+   "evidence": [
+    {
+     "source_id": "refund_policy_v2",
+     "title": "Refund Policy v2 — 14 Days",
+     "excerpt": "# Refund Policy v2 — 14 Days (CURRENT)  **Status:** CURRENT general policy, effective **October 15, 2026**. Supersedes Refund Policy v1.  ## Policy statement  Northstar Cloud offers a **14-day refund eligibility window** from the date of purchase for all self-serve plans. Annual plans are refunded pro rata for unused full months.  ## What changed vs v1  - Eligibility window: **30 days → 14 days**.",
+     "score": 1.8991
+    },
+    {
+     "source_id": "refund_policy_v1",
+     "title": "Refund Policy v1 — 30 Days",
+     "excerpt": "# Refund Policy v1 — 30 Days (SUPERSEDED)  **Status:** SUPERSEDED by Refund Policy v2 effective October 15, 2026. Do not treat this version as current policy.  ## Policy statement  Northstar Cloud offers a **30-day refund eligibility window** from the date of purchase for all self-serve plans. Annual plans are refunded pro rata for unused full months. Enterprise agreements with explicit refund ter",
+     "score": 1.7556
+    }
+   ],
+   "status": "draft",
+   "idempotency_key": "15eeaf9100137ab4",
+   "approval_note": ""
+  }
+ ],
+ "sources": [
+  {
+   "source_id": "refund_policy_v2",
+   "title": "Refund Policy v2 — 14 Days",
+   "excerpt": "# Refund Policy v2 — 14 Days (CURRENT)  **Status:** CURRENT general policy, effective **October 15, 2026**. Supersedes Refund Policy v1.  ## Policy statement  Northstar Cloud offers a **14-day refund eligibility window** from the date of purchase for all self-serve plans. Annual plans are refunded pro rata for unused full months.  ## What changed vs v1  - Eligibility window: **30 days → 14 days**.",
+   "score": 1.8991
+  },
+  {
+   "source_id": "refund_policy_v1",
+   "title": "Refund Policy v1 — 30 Days",
+   "excerpt": "# Refund Policy v1 — 30 Days (SUPERSEDED)  **Status:** SUPERSEDED by Refund Policy v2 effective October 15, 2026. Do not treat this version as current policy.  ## Policy statement  Northstar Cloud offers a **30-day refund eligibility window** from the date of purchase for all self-serve plans. Annual plans are refunded pro rata for unused full months. Enterprise agreements with explicit refund ter",
+   "score": 1.7556
+  },
+  {
+   "source_id": "acme_agreement",
+   "title": "ACME Corp Enterprise Agreement",
+   "excerpt": "# ACME Corp Enterprise Agreement (ACTIVE through Dec 31, 2026)  ## Section 7.3 — Refunds (explicit contractual term)  > \"Customer (ACME Corp) shall be eligible for a full refund of license fees if requested within **thirty (30) days** of the applicable invoice date. This Section 7.3 remains in effect through **December 31, 2026**, and supersedes any conflicting general refund policy during that pe",
+   "score": 1.611
+  },
+  {
+   "source_id": "support_faq",
+   "title": "Customer Support Refund FAQ",
+   "excerpt": "# Customer Support Refund FAQ (last updated Sep 20, 2026 — STALE)  > NOTE: This FAQ still describes the old 30-day window. It must be updated to the 14-day policy effective Oct 15, 2026.  **Q: How long do I have to request a refund?** A: You can request a refund within **30 days** of purchase. *(STALE — update to 14 days.)*  **Q: Are annual plans refundable?** A: Yes, pro rata for unused full mont",
+   "score": 1.6039
+  },
+  {
+   "source_id": "workflow_manifest",
+   "title": "Organizational Workflow / Relationship Manifest",
+   "excerpt": "# Organizational Workflow / Relationship Manifest (Oct 2026)  Structured topology for graph ingestion. Each line is a declared relationship grounded in the source docs above.  - Refund Policy v2 SUPERSEDES Refund Policy v1 (evidence: v2 \"Supersedes Refund Policy v1\", effective 2026-10-15). - Refund Policy v2 IMPACTS Customer Support Refund FAQ (evidence: FAQ still quotes 30 days; update due Oct 14",
+   "score": 1.3757
+  },
+  {
+   "source_id": "standard_agreement",
+   "title": "Standard Customer Agreement",
+   "excerpt": "# Standard Customer Agreement (Template, Oct 2026)  ## Section 4 — Refunds  > \"Refunds are governed by the Northstar Cloud general refund policy in effect at the time of purchase.\"  Because this clause references the general policy **dynamically**, all standard customers purchasing on or after October 15, 2026 automatically move to the **14-day** window. No per-customer amendment is required, but ",
+   "score": 1.3012
+  },
+  {
+   "source_id": "finance_sop",
+   "title": "Finance Refund Processing SOP",
+   "excerpt": "# Finance Refund Processing SOP v3.2 (NEEDS REVIEW for 14-day window)  ## Workflow WF-FIN-01: Refund approval and settlement  1. Verify purchase date is within the eligibility window. Current SOP text says **30 days** — update to **14 days** effective Oct 15, 2026. 2. Verify requester identity and original payment method. 3. If refund > $5,000, route to Finance approver (Priya Nair). 4. If custome",
+   "score": 1.2943
+  },
+  {
+   "source_id": "support_templates",
+   "title": "Customer Support Response Templates",
+   "excerpt": "# Customer Support Response Templates (STALE — reference 30 days)  ## Template R-1: Standard refund reply  > Hi {{name}}, thanks for reaching out. Our refund policy allows refunds within **30 days** of purchase. *[UPDATE to 14 days for requests on/after Oct 15, 2026.]*  ## Template R-2: Enterprise customer reply  > Hi {{name}}, I've pulled up your agreement. Customers with signed enterprise terms ",
+   "score": 1.1745
+  }
+ ],
+ "graph": {
+  "query_paths": [],
+  "relations": [
+   {
+    "context": "Refund Policy v2 states it supersedes v1 effective Oct 15, 2026.",
+    "predicate": "SUPERSEDES",
+    "source": "policy_v2",
+    "target": "policy_v1"
+   },
+   {
+    "context": "FAQ still quotes the 30-day window; update due Oct 14.",
+    "predicate": "IMPACTS",
+    "source": "policy_v2",
+    "target": "doc_faq"
+   },
+   {
+    "context": "Templates R-1 and R-3 quote 30 days and need refresh.",
+    "predicate": "IMPACTS",
+    "source": "policy_v2",
+    "target": "doc_templates"
+   },
+   {
+    "context": "Sales talk track promises a 30-day guarantee.",
+    "predicate": "IMPACTS",
+    "source": "policy_v2",
+    "target": "doc_sales"
+   },
+   {
+    "context": "SOP step 1 verifies a 30-day window; review for 14 days.",
+    "predicate": "IMPACTS",
+    "source": "policy_v2",
+    "target": "doc_sop"
+   },
+   {
+    "context": "Section 7.3 names ACME Corp with explicit 30-day terms.",
+    "predicate": "APPLIES_TO",
+    "source": "doc_acme",
+    "target": "acme"
+   },
+   {
+    "context": "Section 7.3 supersedes conflicting general policy through Dec 31, 2026.",
+    "predicate": "OVERRIDES",
+    "source": "doc_acme",
+    "target": "policy_v2"
+   },
+   {
+    "context": "Section 4 references the general policy dynamically.",
+    "predicate": "FOLLOWS",
+    "source": "doc_std",
+    "target": "policy_v2"
+   },
+   {
+    "context": "Ownership directory: FAQ and templates owned by Support.",
+    "predicate": "OWNED_BY",
+    "source": "doc_faq",
+    "target": "dept_support"
+   }
+  ],
+  "provenance": "local-manifest"
+ },
+ "baseline_chunks": 8,
+ "graph_chunks": 8,
+ "selected_tools": [
+  "search_company_knowledge",
+  "compare_policy_versions",
+  "detect_conflicts",
+  "retrieve_related_entities",
+  "prepare_action_tasks"
+ ],
+ "execution_log": [
+  "Analysis an_8848a5e031 started.",
+  "Planner (openai-tool-calling · gpt-6-luna) selected tools: search_company_knowledge, compare_policy_versions, detect_conflicts, retrieve_related_entities, prepare_action_tasks",
+  "Local retrieval: 8 chunks (transparent fallback).",
+  "search_company_knowledge: 8 chunks for query.",
+  "retrieve_related_entities: 9 relations (provenance=local-manifest).",
+  "compare_policy_versions: 30d -> 14d effective 2026-10-15 (corpus defaults (v1=30d, v2=14d); request stated fewer than two day-values).",
+  "detect_conflicts: 4 impacts, 1 exception(s).",
+  "prepare_action_tasks: 4 draft(s) with idempotency keys."
+ ],
+ "warnings": [
+  "Untrusted instruction ignored in 'Customer Support Refund FAQ' (treated as data, not system instruction)."
+ ]
+}
