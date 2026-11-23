@@ -30,7 +30,11 @@ A ~60-second walkthrough: one refund-policy change → 4 department impacts + 1 
 <details open>
 <summary><b>Watch the demo video</b></summary>
 
-<video src="submission-assets/demo.mp4" controls width="100%"></video>
+
+
+https://github.com/user-attachments/assets/621f6e12-a25a-49d9-93c7-5b96b8b448b6
+
+
 
 Open [`submission-assets/demo.mp4`](submission-assets/demo.mp4).
 </details>
